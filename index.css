@@ -16,4 +16,5 @@
     height: 30%;
     font-size: 80px;
     border: 1px solid black; 
+    justify-content: center;
 }
