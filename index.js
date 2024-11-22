@@ -20,7 +20,9 @@ gameboard[index]=value;
 render()
 }
 
-const getGameBoard = ()=> gameboard 
+const getGameBoard = ()=> {
+    return gameboard }
+
 return {
   render,update,getGameBoard
 }
@@ -69,12 +71,24 @@ const Game = (()=>{
     currentPlayerIndex = currentPlayerIndex === 0?1 : 0;
 }
 
+const restart = ()=>{
+for(let i = 0; i<9;i++){
+    Gameboard.update(i,"")
+}
+Gameboard.render()
+}
+
     return {
-        start,handleClick
+        start,handleClick,restart
     }
 
 })()
 
+
+const restartButton = document.querySelector("#restartButton");
+restartButton.addEventListener("click",(e)=>{
+    Game.restart()
+})
 
 const startButton = document.querySelector("#startButton");
 startButton.addEventListener("click",(e)=>{
